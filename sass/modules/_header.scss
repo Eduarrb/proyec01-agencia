@@ -1,0 +1,161 @@
+.header{
+    background-image: url(../img/header-bg.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    &__nav{ // & -> .header
+        padding: 2.5rem 0;
+        transition: all .3s;
+        position: fixed;
+        width: 100%;
+        z-index: 1;
+        // height: 9rem;
+        // display: flex;
+        @media only screen and (max-width: $bp-large){
+            background-color: #212529;
+            transition: all .3s;
+        }
+
+        &__contenedor{ // & -> .header__nav
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+            // width: 80%;
+            // max-width: 120rem;
+            // margin-left: auto;
+            // margin-right: auto;
+            &--logo{ // & -> .header__nav__contenedor
+                color: #fec503;
+                font-size: 2.8rem; // -> 28px
+                font-family: $font-kaushan;
+                transition: all .3s;
+                @media only screen and (max-width: $bp-large){
+                    font-size: 2rem;
+                    transition: all .3s;
+                    z-index: 1;
+                }
+            }
+            &__menu{
+                display: flex;
+                @media only screen and (max-width: $bp-large){
+                    // display: none;
+                    position: absolute;
+                    background-color:rgba(#000, .9);
+                    top: 0;
+                    left: -100%;
+                    width: 100%;
+                    // right: 0;
+                    // bottom: 0;
+                    height: 100vh;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    transition: all .5s;
+                    &.active{
+                        left: 0;
+                        transition: all .5s;
+                    }
+                }
+                &__item{
+                    margin: 0 1rem;
+                    &--link{
+                        color: white;
+                        font-size: 1.4rem;
+                        text-transform: uppercase;
+                        font-family: $font-mont;
+                        padding: 1rem .5rem;
+                        // background-color: peru;
+                        display: inline-block;
+                        transition: all .3s;
+                        @media only screen and (max-width: $bp-large){
+                            font-size: 2.8rem;
+                        }
+                        &:hover{
+                            color: #fec503;
+                            transition: all .3s;    
+                        }
+                    }
+                }
+            }
+            &--btn{
+                background-color: #fec503;;
+                font-size: 1.2rem;
+                color: white;
+                font-family: $font-mont;
+                padding: 1rem;
+                border-radius: .3rem;
+                text-transform: uppercase;
+                cursor: pointer;
+                display: none;
+                @media only screen and (max-width: $bp-large){
+                    display: block;
+                    z-index: 1;
+                }
+                i{
+                    margin-left: .5rem;
+                }
+            }
+        }
+        /* header p{
+            font-size: 30px
+        }
+        */
+        /* .header__nav .active{
+            width: 100%;
+        } 
+        */
+
+        /* .header__nav.active{
+            MARGIN: 10PX;
+        }
+        */
+        // .activeNav{
+
+        // }
+        // .header__nav.active{
+
+        // }
+        &.active{
+            background-color: #212529;
+            // background-color: peru;
+            padding: 1rem 0;
+            transition: all .3s;
+            @media only screen and (max-width: $bp-large){
+                padding: 2.5rem 0;
+            }
+            & .header__nav__contenedor--logo{
+                font-size: 2rem;
+                transition: all .3s;
+            }
+        }
+    }
+    &__bienvenida{
+        text-align: center;
+        color: white;
+        height: calc(100% - 9rem);
+        display: flex;
+        align-items: center;
+        &__contenedor{
+            &--subtitulo{
+                font-family: $font-merri;
+                font-size: 3.5rem;
+                font-style: italic;
+            }
+            &--titulo{
+                font-family: $font-mont;
+                font-size: 7.5rem;
+                text-transform: uppercase;
+                // margin-top: 2rem;
+                // margin-bottom: 6rem;
+                @media only screen and (max-width: $bp-medium){
+                    font-size: 6rem;
+                }
+                @media only screen and (max-width: $bp-small){
+                    font-size: 4rem;
+                }
+            }
+            
+        }
+    }
+}
